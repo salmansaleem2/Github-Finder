@@ -5,7 +5,7 @@ const AlertContext = createContext();
 
 export const AlertProvider = ({ children }) => {
   const initialState = null;
-  const [state, dispatch] = useReducer( , initialState);
+  const [state, dispatch] = useReducer(alertReducer, initialState);
 
   //Set an alert
   const setAlert = (msg, type) => {
@@ -18,7 +18,7 @@ export const AlertProvider = ({ children }) => {
   };
 
   return (
-    <AlertContext.Provider value={({ alert: state }, setAlert)}>
+    <AlertContext.Provider value={{ alert: state, setAlert }}>
       {children}
     </AlertContext.Provider>
   );
