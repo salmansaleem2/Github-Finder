@@ -86,7 +86,7 @@ export const GithubProvider = ({ children }) => {
   const setLoading = () =>
     dispatch({
       type: "SET_LOADING",
-    });
+    })
 
   return (
     <GithubContext.Provider
